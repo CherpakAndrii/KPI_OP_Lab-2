@@ -1,4 +1,6 @@
-def rating(rating):
+from operator import itemgetter
+
+def outp(rating):
     res = open("res.csv", "w")
     rating.sort(key=itemgetter(1))
     for pair in rating[:10]:

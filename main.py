@@ -1,6 +1,6 @@
 from Lab2_getMatrix import get_matrix
 from Lab2_Outp import outp
-from aaaaa import GetWinners
+from Lab2_GetWinners import GetWinners
 
 directory = input("Enter the directory: ")
 if directory == None: directory = "C:\\Users\\User\Desktop\Навчання\ОП\Lab_2\\"
