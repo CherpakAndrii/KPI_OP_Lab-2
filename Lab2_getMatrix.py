@@ -9,3 +9,9 @@ def get_matrix(directory):
     for line in lst:
         table.append(line.split(','))
     return table
+
+def get_dict(matr):
+    dct = {}
+    for line in matr:
+        dct[line[0]] = 0
+    return dct
