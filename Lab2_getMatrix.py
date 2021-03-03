@@ -21,4 +21,26 @@ def get_matrix(directory):
     for i in range(len(table)):
         for j in range(len(table[i])):
             if table[i][j].isdigit(): table[i][j] = int(table[i][j])
+            elif table[i][j][:2]=="0x": table[i][j]=convert(table[i][j])
     return table
+
+
+def convert(hex):
+    dct = {'a':10,
+          'b':11,
+           'c':12,
+           'd':13,
+           'e':14,
+           'f':15}
+    nums = hex[2:]
+    l = len(nums)-1
+    dec = 0
+    for n in nums:
+        if n.isdigit():
+            dec += int(n)*16**l
+            l-=1
+        elif n in dct.keys():
+            dec+=int(dct[n])*16**l
+            l-=1
+        else: return 0
+    return dec
